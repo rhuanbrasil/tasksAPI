@@ -30,16 +30,16 @@ public class TaskController {
     public TaskResponseDTO getTaskByDescription(@RequestParam String description) {
         return service.getTaskByDescription(description);
     }
-    @GetMapping("/{id}")
+    @PutMapping
     @Operation(
             summary = "set the task as complete",
             description = "method that set the task, that was filtered by id, complete"
     )
     @ApiResponse(responseCode = "200", description = "the task was marked as complete")
-    public void setComplete(@PathVariable("id") Long id) {
+    public void setComplete(@RequestParam Long id) {
         service.setToComplete(id);
     }
-    @PostMapping("/{id}")
+    @PutMapping("/{id}")
     @Operation(
             summary = "updates the task",
             description = "updates the task"
