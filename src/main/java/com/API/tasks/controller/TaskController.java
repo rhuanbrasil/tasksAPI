@@ -53,7 +53,7 @@ public class TaskController {
             summary = "lists the tasks",
             description = "lists the tasks"
     )
-    @ApiResponse(responseCode = "200", description = "the task was updated")
+    @ApiResponse(responseCode = "200", description = "That is the tasks found")
     public List<TaskResponseDTO> listTasks() {
        return service.getTasks();
     }
