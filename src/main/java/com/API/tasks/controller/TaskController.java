@@ -27,7 +27,7 @@ public class TaskController {
     @GetMapping
     @Operation(summary = "filter by task description", description = "method that filter task by its description")
     @ApiResponse(responseCode = "200", description = "the task was found")
-    public TaskResponseDTO getTaskByDescription(@RequestParam String description) {
+    public List<TaskResponseDTO> getTaskByDescription(@RequestParam String description) {
         return service.getTaskByDescription(description);
     }
     @PutMapping

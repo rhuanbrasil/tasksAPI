@@ -32,8 +32,8 @@ public class TaskService {
     public List<TaskResponseDTO> getTasks() {
         return mapper.toResponseList(repo.findAll());
     }
-    public TaskResponseDTO getTaskByDescription(String description) {
-        return mapper.toResponse(repo.findByDescriptionContainingIgnoreCase(description));
+    public List<TaskResponseDTO> getTaskByDescription(String description) {
+        return mapper.toResponseList(repo.findByDescriptionContainingIgnoreCase(description));
     }
     public void setToComplete(long id) {
         TaskEntity taskEntity = repo.findById(id).orElseThrow();
