@@ -6,6 +6,7 @@ import com.API.tasks.business.dtos.TaskResponseDTO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,7 +22,7 @@ public class TaskController {
     @PostMapping
     @Operation(summary = "task creation", description = "method to create a task")
     @ApiResponse(responseCode = "200", description = "New task was cadastred")
-    public TaskResponseDTO createTask(@RequestBody TaskRequestDTO dto) {
+    public TaskResponseDTO createTask(@Valid @RequestBody TaskRequestDTO dto) {
         return service.createTask(dto);
     }
     @GetMapping
