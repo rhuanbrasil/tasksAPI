@@ -187,7 +187,7 @@ spring.jpa.hibernate.ddl-auto=update
 
 ### ▶️ Executando
 
-git clone https://github.com/seu-usuario/task-api.git
+git clone https://github.com/rhuanbrasil/tasksAPI
 cd task-api
 ./mvnw spring-boot:run
 ```
